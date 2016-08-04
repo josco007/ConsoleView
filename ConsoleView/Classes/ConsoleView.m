@@ -8,6 +8,7 @@
 
 #import "ConsoleView.h"
 
+
 @implementation ConsoleView
 
 /*
@@ -53,7 +54,9 @@
 }
 
 -(void)commonInit{
-    containerView = [[[NSBundle mainBundle] loadNibNamed:@"ConsoleView" owner:self options:nil] lastObject];
+    
+    
+    containerView = [[[NSBundle bundleForClass:ConsoleView.self] loadNibNamed:@"ConsoleView" owner:self options:nil] lastObject];
     
     [self setFrame:CGRectMake(0, 0, containerView.frame.size.width, containerView.frame.size.height)];
     [self addSubview:containerView];
@@ -64,10 +67,7 @@
 
 +(void)start{
     
-    
-    ConsoleView *consoleViewIns = [[ConsoleView alloc] init];
-    //consoleViewIns!.iniciar()
-    consoleView = consoleViewIns;
+    consoleView = [[ConsoleView alloc] init];
     consoleView->fileLogName = @"ConsoleViewFileLog";
     
     consoleView->logMar = [[NSMutableArray alloc] init];
@@ -78,6 +78,10 @@
     
     consoleView->customButtonsMar = [[NSMutableArray alloc] init];
     consoleView->customButtonTitleArr = [[NSArray alloc] init];
+    
+    consoleView->testerMode = false;
+    
+    consoleView->isStarted = true;
     
 }
 
@@ -141,6 +145,8 @@
     [logTxv setText:@""];
   
 }
+
+
 
 -(void)addLine:(NSString*)pLine{
     
@@ -265,16 +271,17 @@ void ConsoleViewLog(NSString *format, ...){
                || consoleView -> forceWriteInConsoleView){
                
                    va_start(args,format) ;
-                   [NSThread sleepForTimeInterval:.02];
-                   dispatch_async(dispatch_get_main_queue(), ^{
+                   //[NSThread sleepForTimeInterval:.02];
+                   //dispatch_async(dispatch_get_main_queue(), ^{
                     
                        if ([consoleView->logMar count] > 1000) {
                            [consoleView cleanTxv];
                        }
                        
+                       
                        [consoleView addLine:[[NSString alloc] initWithFormat:format arguments:args]];
                   
-                   });
+                   //});
                    va_end(args) ;
                }
            
@@ -367,6 +374,19 @@ void ConsoleViewSaveToFileLog(NSString *format, ... ){
     
 }
 
++(BOOL)isStarted{
+    
+    return consoleView->isStarted;
+    
+}
+
++(void)forceWriteInConsoleView:(BOOL)pForceWriteInConsoleView{ //unstable
+   consoleView->forceWriteInConsoleView =  pForceWriteInConsoleView;
+}
+
++(void) writeInConsoleViewIfVisible:(BOOL)pWriteInConsoleViewIfVisible{ //unstable
+    consoleView->writeInConsoleViewIfVisible = pWriteInConsoleViewIfVisible;
+}
 
 +(void)setActiveLog:(BOOL)pActiveLog{
     activeLog = pActiveLog;
@@ -379,7 +399,14 @@ void ConsoleViewSaveToFileLog(NSString *format, ... ){
 +(void)setMaxSizeFileLog:(NSInteger) pMaxSize{
     maxSizeFileLog = pMaxSize;
 }
++(void)setTesterMode:(BOOL)pTesterMode{
+    consoleView->testerMode = pTesterMode;
+}
 
++(BOOL)getTesterMode{
+    
+    return consoleView->testerMode;
+}
 
 static ConsoleView *consoleView;
 

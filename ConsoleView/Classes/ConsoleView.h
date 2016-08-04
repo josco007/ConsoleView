@@ -34,7 +34,8 @@
     UIView *containerView;
     
     BOOL isVisible;
-    
+    BOOL testerMode;
+    BOOL isStarted;
     BOOL forceWriteInConsoleView; //unstable
     BOOL writeInConsoleViewIfVisible; //unstable
     
@@ -44,6 +45,8 @@
     IBOutlet UIScrollView *buttonsScv;
     
     NSString * fileLogName;
+    
+    
     
     
     
@@ -107,5 +110,12 @@ FOUNDATION_EXPORT void ConsoleViewSaveToFileLog(NSString *format, ...) NS_FORMAT
 + (void) setCustomButtons:(NSArray*) pButtonsTitles;
 
 + (void) setFileLogName:(NSString*) pFileLogName;
+
++(void) setTesterMode:(BOOL) pTesterMode;
++(BOOL) getTesterMode;
++(BOOL) isStarted;
++(void)forceWriteInConsoleView:(BOOL) pForceWriteInConsoleView; //unstable
++(void)writeInConsoleViewIfVisible:(BOOL) pWriteInConsoleViewIfVisible; //unstable
+
 
 @end

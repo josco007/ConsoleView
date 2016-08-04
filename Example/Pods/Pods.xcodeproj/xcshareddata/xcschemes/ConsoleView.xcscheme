@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '07F1CE23B2695C7BDE230130'
+               BlueprintIdentifier = 'FB431208C8191C4CD273FECE'
                BlueprintName = 'ConsoleView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ConsoleView.framework'>

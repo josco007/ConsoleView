@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+@import ConsoleView;
+
 @interface NMViewController : UIViewController
 
 @end
