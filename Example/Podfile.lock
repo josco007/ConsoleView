@@ -1,0 +1,16 @@
+PODS:
+  - ConsoleView (0.1.0)
+
+DEPENDENCIES:
+  - ConsoleView (from `../`)
+
+EXTERNAL SOURCES:
+  ConsoleView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ConsoleView: 547e1f68837de5c9b021ccc8ae0538465a5f93e4
+
+PODFILE CHECKSUM: bb55f01f6e485c14028ef2951afc7de6c82f3974
+
+COCOAPODS: 1.0.0.beta.2

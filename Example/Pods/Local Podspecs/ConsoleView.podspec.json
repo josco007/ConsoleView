@@ -1,0 +1,22 @@
+{
+  "name": "ConsoleView",
+  "version": "0.1.0",
+  "summary": "A short description of ConsoleView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/ConsoleView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "josco007": "noe_is10@msn.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/ConsoleView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ConsoleView/Classes/**/*"
+}
