@@ -396,7 +396,7 @@ void ConsoleViewSaveToFileLog(NSString *format, ... ){
     activeFileLog = pActiveFileLog;
 }
 
-+(void)setMaxSizeFileLog:(NSInteger) pMaxSize{
++(void)setMaxSizeFileLog:(float) pMaxSize{
     maxSizeFileLog = pMaxSize;
 }
 +(void)setTesterMode:(BOOL)pTesterMode{

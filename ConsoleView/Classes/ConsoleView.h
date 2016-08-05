@@ -100,7 +100,7 @@ FOUNDATION_EXPORT void ConsoleViewSaveToFileLog(NSString *format, ...) NS_FORMAT
  *
  * @param pMaxSize: max size of the file log in kilobytes 
  */
-+(void)setMaxSizeFileLog:(NSInteger) pMaxSize;
++(void)setMaxSizeFileLog:(float) pMaxSize;
 //+(void)setConsoleView:(ConsoleView*)pConsoleView;
 +(ConsoleView*)getConsoleView;
 +(void)addToView:(UIView*)pView;
