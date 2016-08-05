@@ -201,7 +201,7 @@
 }
 static BOOL activeLog;
 static BOOL activeFileLog;
-static BOOL maxSizeFileLog = 50000; // 50 mb default size
+static float maxSizeFileLog = 50000; // 50 mb default size
 
 
 
