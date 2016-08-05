@@ -1,6 +1,9 @@
 
 # ConsoleView
 
+<a href='https://pledgie.com/campaigns/32217'><img alt='Click here to lend your support to: ios utilities and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/32217.png?skin_name=chrome' border='0' ></a>
+
+
 [![CI Status](http://img.shields.io/travis/josco007/ConsoleView.svg?style=flat)](https://travis-ci.org/josco007/ConsoleView)
 [![Version](https://img.shields.io/cocoapods/v/ConsoleView.svg?style=flat)](http://cocoapods.org/pods/ConsoleView)
 [![License](https://img.shields.io/cocoapods/l/ConsoleView.svg?style=flat)](http://cocoapods.org/pods/ConsoleView)
